@@ -1,0 +1,8 @@
+Write a Python program for a food delivery customer dataset with at least 3 numeric features: 
+monthly_orders, avg_spend, and avg_rating. Apply K-Means clustering to the dataset. 
+Use the Elbow Method to determine the optimal number of clusters and plot the inertia curve. 
+Print each cluster's centroid values and the count of customers assigned to each cluster. 
+Visualize the final clusters in 2D using PCA-reduced coordinates, 
+with each cluster shown in a distinct colour and a legend. Use StandardScaler before K-Means, 
+set random_state=42, label the PCA axes as PC1 and PC2, and use k values from 2 to 9 for the Elbow Method. 
+Give me complete Python code without comments.

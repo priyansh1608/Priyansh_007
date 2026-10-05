@@ -1,0 +1,72 @@
+Q1. Mean, median and skewness
+
+The mean is misleading because the few deliveries above 90 minutes are extreme values that pull the mean upward. 
+The median is a better measure of typical delivery time because it is less affected by outliers. 
+The distribution is right-skewed (positively skewed) because most deliveries are around 25–30 minutes while a 
+small number have very large values.
+
+===========================================================================================================
+
+Q2. Bayes' Theorem
+
+Given:
+
+Prior probability = 5% = 0.05
+Probability of detecting fraud = 90% = 0.90
+False-positive rate = 8% = 0.08
+$$ P(Fraud|Flagged)=\frac{0.90\times0.05}{(0.90\times0.05)+(0.08\times0.95)} $$ $$ =\frac{0.045}{0.121}=0.3719 $$
+
+Answer = approximately 37.19%.
+
+Although the model is 90% accurate at detecting fraudulent orders, most orders are legitimate, so false positives 
+make up a significant proportion of flagged orders.
+
+===========================================================================================================
+
+Q3. Preprocessing problems
+
+Missing restaurant ratings: Fill the missing values using an appropriate imputation technique, such as the mean or
+median. Missing values can cause inconsistent training information and reduce model performance.
+
+Categorical text features: Apply one-hot encoding to payment_method and cuisine_type. 
+Machine-learning models cannot directly use raw text categories effectively. 
+Encoding converts them into numerical features.
+
+=============================================================================================================
+
+Q4. Imbalanced classification
+
+Overall accuracy is misleading because only 1% of orders are fraudulent. 
+A model could achieve very high accuracy by mostly predicting "not fraud."
+
+Model B detects:
+
+$$ \frac{420}{500}\times100=84\% $$
+
+So Model B has an 84% recall for fraudulent orders.
+
+Recall is the appropriate metric because the finance team's priority is minimizing missed fraud:
+
+$$ Recall=\frac{TP}{TP+FN} $$
+
+Therefore, the finance team should choose Model B, because it catches 420 of the 500 fraudulent orders.
+
+=============================================================================================================
+
+Q5. K-Means vs DBSCAN
+
+I would recommend K-Means because the customers naturally form 3–4 groups with similar density and there are 
+very few outliers. K-Means is efficient for a large dataset of 80,000 customers and works well when the desired
+groups are relatively compact. A limitation is that the number of clusters must be selected in advance, and 
+K-Means may not handle irregularly shaped clusters well.
+
+===============================================================================================================
+
+Q6. PCA before K-Means
+
+PCA reduces the 35 features into a smaller number of principal components while retaining as much important 
+variance as possible. This can make K-Means faster, reduce the effect of highly correlated features, and make 
+visualization possible.
+
+The trade-off is that retaining fewer components can lose information. The explained variance ratio can be used 
+to choose enough components to retain an acceptable percentage of the original variance.

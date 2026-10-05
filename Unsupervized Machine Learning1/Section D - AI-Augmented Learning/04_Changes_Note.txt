@@ -1,0 +1,7 @@
+I tested the AI-generated code and found that K-Means was applied directly to raw features with different scales.
+
+I added StandardScaler before K-Means so that all three features contribute fairly to clustering.
+
+I also applied PCA to the scaled data for a consistent 2D visualization.
+
+These changes make the clustering results more reliable and interpretable.
